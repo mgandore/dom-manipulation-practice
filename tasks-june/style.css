@@ -1,0 +1,10 @@
+p {
+    border: 1px;
+    border-style: double;
+    border-color: blueviolet;
+    padding: 10px
+}
+
+table, th, td {
+    border: 1px solid;
+}
