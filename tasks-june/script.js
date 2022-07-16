@@ -1,108 +1,112 @@
-///////    task 1    //////
+/*	TASK 1
+	Avem 2 inputuri de tip text intr-un formular care reprezinta numele si prenumele. 
+	Sa se afiseze cu ajutorul unui alert un mesaj de salut.
+*/
 function greet() {
-    alert(`Hello ${nume.value} ${prenume.value}. How are you today`);
+	alert(`Hello ${nume.value} ${prenume.value}. How are you today`);
 }
 
 
-////////    task 2    ////////
+/*	TASK 2
+	Avem un dropdown cu 3 optiuni. 
+	Cu ajutorul unui buton sa se stearga optiunea selectata din dropdown.
+*/
 function deleteOp() {
-    let toDelete = dropdown.value;
-    //console.log(toDelete);
-
-    let allOptions = document.querySelectorAll('option');
-    //console.log(allOptions);
-    for(let item of allOptions) {
-       //console.log(item.value);
-       if (toDelete === item.value) {
-        item.remove();
-       } 
-    }
+	let toDelete = dropdown.value;
+	let allOptions = document.querySelectorAll('option');
+	for (let item of allOptions) {
+		if (toDelete === item.value) {
+			item.remove();
+		}
+	}
 }
 
 
-////////      task 3      //////////
+/*	TASK 3
+	Avem un element de tip <input> pentru a introduce un numar ce reprezinta 
+	raza unei sfere. Sa se afiseze volumul corespunzator razei.
+*/
 function getVolume() {
-    console.log(radius.value);
-    let volume = 4 / 3 * Math.PI * Math.pow(radius.value,3);
-    result.textContent += volume;
+	console.log(radius.value);
+	let volume = 4 / 3 * Math.PI * Math.pow(radius.value, 3);
+	result.textContent += volume;
 }
 
 
-//////    task 4    ///////////
-//window.onload();
-let boldWords = [ ];
-
-window.onload = function() {
-    boldWords = document.getElementsByTagName('b');
+/*	TASK 4
+	Sa se faca highlight (cu culoarea orange) pe cuvintele cu stilul bold cand se face hover pe text. 
+	Altfel, revine la stilul initial (adica bold).
+*/
+let boldWords = [];
+window.onload = function () {
+	boldWords = document.getElementsByTagName('b');
 }
 
 function hightlight() {
-    
-    for (let word of boldWords) {
-        //console.log(word.innerText);
-        word.style.backgroundColor = 'orange';
-        word.style.fontWeight = 100;
-    }
+	for (let word of boldWords) {
+		word.style.backgroundColor = 'orange';
+		word.style.fontWeight = 100;
+	}
 }
 
 function reset() {
-    //console.log(boltWords)
-    for (let word of boldWords) {
-        //console.log(word.innerText)
-        word.style.backgroundColor = 'white';
-        word.style.fontWeight = 700;
-    }
+	for (let word of boldWords) {
+		word.style.backgroundColor = 'white';
+		word.style.fontWeight = 700;
+	}
 }
 
 
-///////     task 5     //////////////
+/*	TASK 5
+	Avem un array de denumiri de fructe.
+	 Afisati fructele intr-o lista neordonata.
+*/
 function displayList() {
-    let fruits = ['apple', 'peach', 'cherry']
-    let list = document.getElementsByTagName('ul');
-    //console.log(list);
-    for (let fruit of fruits) {
-        let listItem = document.createElement('li');
-        let fruitName = document.createTextNode(fruit);
-        listItem.appendChild(fruitName);
-        list[0].appendChild(listItem);
-         
-    }
-    //console.log(list[0]);
+	let fruits = ['apple', 'peach', 'cherry']
+	let list = document.getElementsByTagName('ul');
+	for (let fruit of fruits) {
+		let listItem = document.createElement('li');
+		let fruitName = document.createTextNode(fruit);
+		listItem.appendChild(fruitName);
+		list[0].appendChild(listItem);
+	}
 }
 
 
-////////      task 6      ///////////////
+/*	TASK 6
+	Sa se schimbe culoarea backgroundului cu ajutorul unui color picker.
+*/
 function setColor() {
-    let colorPicker = document.getElementById('colorpicker');
-    document.body.style.backgroundColor = colorPicker.value;
+	let colorPicker = document.getElementById('colorpicker');
+	document.body.style.backgroundColor = colorPicker.value;
 }
 
 
-/////////   task 7    ///////////////////
+/*	TASK 7
+	Sa se adauge un rand nou la fiecare click de buton intr-un tabel cu 2 coloane: 
+	id si name. Name-ul va fi extras dintr-un input. Id-ul incepe de la 1.
+*/
 let userId = 1;
 
 function addUser() {
-    let usersTable = document.querySelector('#users');
-    //console.log(usersTable);
-    let newRow = document.createElement('tr');
-    
-    let idCell = document.createElement('th');
-    let idCellNode = document.createTextNode(userId)
-    idCell.appendChild(idCellNode);
-    newRow.appendChild(idCell);
-    //console.log(newRow);
+	let usersTable = document.querySelector('#users');
+	let newRow = document.createElement('tr');
 
-    let usernameCell = document.createElement('th');
-    let usernameCellNode = document.createTextNode(username.value);
-    usernameCell.appendChild(usernameCellNode);
-    newRow.appendChild(usernameCell);
-    //console.log(newRow)
+	let idCell = document.createElement('th');
+	let idCellNode = document.createTextNode(userId)
+	idCell.appendChild(idCellNode);
+	newRow.appendChild(idCell);
 
-    usersTable.appendChild(newRow);
-    userId++;
+	let usernameCell = document.createElement('th');
+	let usernameCellNode = document.createTextNode(username.value);
+	usernameCell.appendChild(usernameCellNode);
+	newRow.appendChild(usernameCell);
+
+	usersTable.appendChild(newRow);
+	userId++;
 }
 
 function deleteUser() {
-    let usersTable = document.querySelector('#users');
-    usersTable.rows[usersTable.rows.length - 1].remove();
+	let usersTable = document.querySelector('#users');
+	usersTable.rows[usersTable.rows.length - 1].remove();
 }
