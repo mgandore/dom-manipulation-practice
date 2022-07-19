@@ -13,17 +13,7 @@ function greet() {
 */
 function deleteOp() {
 	const dropdown = document.querySelector('#dropdown');
-	
-	// 1 //
-	// for (let i = 0; i < dropdown.length; i++) {
-	// 	if (dropdown[i].selected === true) {
-	// 		dropdown.remove(i);
-	// 	}
-	// }
-
-	// 2 //
 	dropdown.remove(dropdown.selectedIndex);
-
 }
 
 
