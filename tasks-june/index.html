@@ -1,0 +1,68 @@
+<html>
+
+<head>
+	<title>DOM Practice</title>
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="exercice">
+		<h2>Exercice 1</h2>
+		<form>
+			<label for="nume">Nume</label>
+			<input id="nume" type="text">
+			<br>
+			<label for="prenume">Prenume</label>
+			<input id="prenume" type="text">
+			<br>
+			<button onclick="greet()">Greet</button>
+		</form>
+	</div>
+	<div class="exercice">
+		<h2>Exercice 2</h2>
+		<select id="dropdown">
+			<option id="op-1">Op 1</option>
+			<option id="op-2">Op 2</option>
+			<option id="op-3">Op 3</option>
+		</select>
+		<button onclick="deleteOp()">Delete</button>
+	</div>
+	<div class="exercice">
+		<h2>Exercice 3</h2>
+		<label for="radius">Radius of the sphere</label>
+		<input id="radius" type="number">
+		<button onclick="getVolume()">Compute</button>
+		<div id="result">Volume is: </div>
+	</div>
+	<div class="exercice">
+		<h2>Exercice 4</h2>
+		<p onmouseover="hightlight()" onmouseout="reset()" id="dummytext">Lorem <b>ipsum</b> dolor sit <b>amet</b></p>
+	</div>
+	<div class="exercice-5">
+		<h2>Exercice 5</h2>
+		<ul></ul>
+		<button onclick="displayList()">Generate List</button>
+	</div>
+	<div class="exercice">
+		<h2>Exercice 6</h2>
+		<label for="colorpicker">Pick a color for background</label>
+		<input type="color" id="colorpicker">
+		<button onclick="setColor()">Set background color</button>
+	</div>
+	<div class="exercice">
+		<h2>Exercice 7</h2>
+		<label for="username">Nume</label>
+		<input id="username" type="text">
+		<button onclick="addUser()">Add</button>
+		<table id="users">
+			<tr>
+				<th>User ID</th>
+				<th>User Name</th>
+			</tr>
+		</table>
+		<button onclick="deleteUser()">Delete</button>
+	</div>
+</body>
+
+</html>
