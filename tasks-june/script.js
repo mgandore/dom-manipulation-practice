@@ -12,13 +12,18 @@ function greet() {
 	Cu ajutorul unui buton sa se stearga optiunea selectata din dropdown.
 */
 function deleteOp() {
-	let toDelete = dropdown.value;
-	let allOptions = document.querySelectorAll('option');
-	for (let item of allOptions) {
-		if (toDelete === item.value) {
-			item.remove();
-		}
-	}
+	const dropdown = document.querySelector('#dropdown');
+	
+	// 1 //
+	// for (let i = 0; i < dropdown.length; i++) {
+	// 	if (dropdown[i].selected === true) {
+	// 		dropdown.remove(i);
+	// 	}
+	// }
+
+	// 2 //
+	dropdown.remove(dropdown.selectedIndex);
+
 }
 
 
@@ -27,7 +32,6 @@ function deleteOp() {
 	raza unei sfere. Sa se afiseze volumul corespunzator razei.
 */
 function getVolume() {
-	console.log(radius.value);
 	let volume = 4 / 3 * Math.PI * Math.pow(radius.value, 3);
 	result.textContent += volume;
 }
@@ -42,18 +46,19 @@ window.onload = function () {
 	boldWords = document.getElementsByTagName('b');
 }
 
-function hightlight() {
+function setStyleOnBoldWords(backgroundColor, fontWeight) {
 	for (let word of boldWords) {
-		word.style.backgroundColor = 'orange';
-		word.style.fontWeight = 100;
+		word.style.backgroundColor = backgroundColor;
+		word.style.fontWeight = fontWeight;
 	}
 }
 
+function hightlight() {
+	setStyleOnBoldWords('orange', 100);
+}
+
 function reset() {
-	for (let word of boldWords) {
-		word.style.backgroundColor = 'white';
-		word.style.fontWeight = 700;
-	}
+	setStyleOnBoldWords('white', 700);
 }
 
 
